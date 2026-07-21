@@ -25,3 +25,22 @@ Route::put('categories/{category}/edit', [\App\Http\Controllers\CategoryControll
 //Route xoa du lieu tren db
 Route::delete('categories/{category}', [\App\Http\Controllers\CategoryController::class, 'destroy'])
     ->name('categories.destroy');
+
+//Route hien thi danh sach san pham
+Route::get('products', [\App\Http\Controllers\ProductController::class, 'index'])
+    ->name('products.index');
+//Route hien thi form them
+Route::get('/products/create', [\App\Http\Controllers\ProductController::class, 'create'])
+    ->name('products.create');
+//Route them du lieu len db
+Route::post('/products/create', [\App\Http\Controllers\ProductController::class, 'store'])
+    ->name('products.store');
+//Route hien thi form sua
+Route::get('/products/{product}/edit', [\App\Http\Controllers\ProductController::class, 'edit'])
+    ->name('products.edit');
+//Route chinh sua du lieu
+Route::put('/products/{product}/edit', [\App\Http\Controllers\ProductController::class, 'update'])
+    ->name('products.update');
+//Route xoa du lieu
+Route::delete('/products/{product}', [\App\Http\Controllers\ProductController::class, 'destroy'])
+    ->name('products.destroy');
