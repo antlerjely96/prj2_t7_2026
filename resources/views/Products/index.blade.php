@@ -1,11 +1,5 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Document</title>
-</head>
-<body>
+@extends('Layouts.layout')
+@section('main_yield')
     <a href="{{ route('products.create') }}">Add a product</a>
     <table border="1px" cellpadding="0" cellspacing="0" width="100%">
         <tr>
@@ -47,5 +41,4 @@
             </tr>
         @endforeach
     </table>
-</body>
-</html>
+@endsection

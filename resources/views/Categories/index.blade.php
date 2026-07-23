@@ -1,11 +1,5 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>List category</title>
-</head>
-<body>
+@extends('Layouts.layout')
+@section('main_yield')
     <a href="{{ route('categories.create') }}">Add category</a>
     <table border="1px" cellspacing="0" cellpadding="0" width="100%">
         <tr>
@@ -31,5 +25,4 @@
             </tr>
         @endforeach
     </table>
-</body>
-</html>
+@endsection

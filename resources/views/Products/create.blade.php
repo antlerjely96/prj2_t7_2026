@@ -1,11 +1,5 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Add a product</title>
-</head>
-<body>
+@extends('Layouts.layout')
+@section('main_yield')
     <form method="post" action="{{ route('products.store') }}">
         @csrf
         Name: <input type="text" name="name"><br>
@@ -20,5 +14,4 @@
         </select><br>
         <button>Add</button>
     </form>
-</body>
-</html>
+@endsection

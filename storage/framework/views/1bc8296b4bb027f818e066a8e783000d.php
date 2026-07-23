@@ -1,11 +1,4 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Add a product</title>
-</head>
-<body>
+<?php $__env->startSection('main_yield'); ?>
     <form method="post" action="<?php echo e(route('products.store')); ?>">
         <?php echo csrf_field(); ?>
         Name: <input type="text" name="name"><br>
@@ -21,6 +14,6 @@
         </select><br>
         <button>Add</button>
     </form>
-</body>
-</html>
-<?php /**PATH C:\xampp\htdocs\prj2_t7_2026\resources\views/products/create.blade.php ENDPATH**/ ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('Layouts.layout', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH C:\xampp\htdocs\prj2_t7_2026\resources\views/products/create.blade.php ENDPATH**/ ?>

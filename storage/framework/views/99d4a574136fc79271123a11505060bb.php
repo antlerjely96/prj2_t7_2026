@@ -1,11 +1,4 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Edit a product</title>
-</head>
-<body>
+<?php $__env->startSection('main_yield'); ?>
     <form method="post" action="<?php echo e(route('products.update', $product->id)); ?>">
         <?php echo csrf_field(); ?>
         <?php echo method_field('PUT'); ?>
@@ -15,8 +8,8 @@
         Category: <select name="category_id">
             <?php $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <option value="<?php echo e($category->id); ?>"
-                    <?php if($product->category_id == $category->id): ?>
-                        <?php echo e('selected'); ?>
+                <?php if($product->category_id == $category->id): ?>
+                    <?php echo e('selected'); ?>
 
                     <?php endif; ?>
                 >
@@ -27,6 +20,6 @@
         </select><br>
         <button>Edit</button>
     </form>
-</body>
-</html>
-<?php /**PATH C:\xampp\htdocs\prj2_t7_2026\resources\views/products/edit.blade.php ENDPATH**/ ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('Layouts.layout', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH C:\xampp\htdocs\prj2_t7_2026\resources\views/products/edit.blade.php ENDPATH**/ ?>

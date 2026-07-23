@@ -1,11 +1,5 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Edit a product</title>
-</head>
-<body>
+@extends('Layouts.layout')
+@section('main_yield')
     <form method="post" action="{{ route('products.update', $product->id) }}">
         @csrf
         @method('PUT')
@@ -15,8 +9,8 @@
         Category: <select name="category_id">
             @foreach($categories as $category)
                 <option value="{{ $category->id }}"
-                    @if($product->category_id == $category->id)
-                        {{ 'selected' }}
+                @if($product->category_id == $category->id)
+                    {{ 'selected' }}
                     @endif
                 >
                     {{ $category->name }}
@@ -25,5 +19,4 @@
         </select><br>
         <button>Edit</button>
     </form>
-</body>
-</html>
+@endsection
